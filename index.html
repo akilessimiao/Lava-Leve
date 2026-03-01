@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lava & Leve • Lavanderia Express</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&amp;display=swap');
+        
+        :root {
+            --neon-green: #39ff14;
+            --neon-pink: #ff00cc;
+            --neon-cyan: #00ffff;
+        }
+        
+        body {
+            font-family: 'Press Start 2P', system-ui;
+            background: linear-gradient(180deg, #0a071f 0%, #1a1428 100%);
+            color: white;
+            overflow-x: hidden;
+        }
+        
+        .neon-text-green {
+            text-shadow: 
+                0 0 10px var(--neon-green),
+                0 0 20px var(--neon-green),
+                0 0 40px var(--neon-green);
+        }
+        
+        .neon-text-pink {
+            text-shadow: 
+                0 0 10px var(--neon-pink),
+                0 0 20px var(--neon-pink),
+                0 0 40px var(--neon-pink);
+        }
+        
+        .neon-text-cyan {
+            text-shadow: 
+                0 0 10px var(--neon-cyan),
+                0 0 20px var(--neon-cyan),
+                0 0 40px var(--neon-cyan);
+        }
+        
+        .logo-glow {
+            animation: glow 2s ease-in-out infinite alternate;
+        }
+        
+        @keyframes glow {
+            from { filter: drop-shadow(0 0 20px #39ff14); }
+            to { filter: drop-shadow(0 0 40px #ff00cc); }
+        }
+        
+        .lego-block {
+            border: 8px solid;
+            border-image: linear-gradient(45deg, #39ff14, #ff00cc, #00ffff) 1;
+            box-shadow: 0 0 30px rgba(57, 255, 20, 0.6);
+            transition: all 0.3s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+        }
+        
+        .lego-block:hover {
+            transform: scale(1.05) rotate(2deg);
+            box-shadow: 0 0 50px rgba(255, 0, 204, 0.8);
+        }
+        
+        .bubble {
+            position: absolute;
+            background: radial-gradient(circle, rgba(0,255,255,0.6) 0%, transparent 70%);
+            border-radius: 50%;
+            animation: float 8s linear infinite;
+            opacity: 0.6;
+        }
+        
+        @keyframes float {
+            0% { transform: translateY(100vh) scale(0.5); }
+            100% { transform: translateY(-100vh) scale(1.2); }
+        }
+        
+        .machine-card {
+            background: linear-gradient(145deg, #1f1638, #2a1f4d);
+        }
+        
+        .phone-mock {
+            border: 12px solid #111;
+            border-radius: 60px;
+            background: #000;
+            box-shadow: 0 0 60px #00ffff;
+        }
+    </style>
+</head>
+<body class="min-h-screen">
+    <!-- HEADER -->
+    <header class="sticky top-0 z-50 bg-black/90 border-b-4 border-[#ff00cc] backdrop-blur-lg">
+        <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+            <div class="flex items-center gap-4">
+                <!-- Logo pequena -->
+                <img src="logo.png" alt="Lava & Leve" class="h-12 w-auto logo-glow">
+                <div>
+                    <span class="text-3xl font-bold neon-text-green">LAVA</span>
+                    <span class="text-3xl font-bold neon-text-pink">&amp;</span>
+                    <span class="text-3xl font-bold neon-text-cyan">LEVE</span>
+                </div>
+            </div>
+            
+            <nav class="hidden md:flex gap-8 text-sm uppercase tracking-widest">
+                <a href="#maquinas" class="hover:text-[#ff00cc] transition">MÁQUINAS</a>
+                <a href="#app" class="hover:text-[#00ffff] transition">APP</a>
+                <a href="#fidelidade" class="hover:text-[#39ff14] transition">LAVA LEAGUE</a>
+                <a href="#feedback" class="hover:text-[#ff00cc] transition">FEEDBACK</a>
+            </nav>
+            
+            <a href="#app" 
+               class="px-8 py-3 bg-gradient-to-r from-[#ff00cc] to-[#00ffff] text-black font-bold rounded-xl hover:scale-110 transition flex items-center gap-2">
+                <i class="fa-solid fa-download"></i>
+                BAIXAR APP
+            </a>
+        </div>
+    </header>
+
+    <!-- HERO -->
+    <section class="relative min-h-screen flex items-center justify-center overflow-hidden">
+        <!-- Bolhas flutuantes -->
+        <div class="absolute inset-0 pointer-events-none">
+            <div class="bubble w-12 h-12 left-[10%] top-[20%]"></div>
+            <div class="bubble w-8 h-8 left-[25%] top-[40%] animation-delay-2000"></div>
+            <div class="bubble w-16 h-16 left-[60%] top-[10%] animation-delay-4000"></div>
+            <div class="bubble w-10 h-10 left-[75%] top-[70%] animation-delay-1000"></div>
+            <div class="bubble w-14 h-14 left-[85%] top-[30%] animation-delay-3000"></div>
+        </div>
+
+        <div class="max-w-6xl mx-auto px-6 text-center relative z-10">
+            <!-- Logo gigante -->
+            <img src="logo.png" alt="Lava & Leve" 
+                 class="mx-auto mb-8 w-96 logo-glow">
+            
+            <h1 class="text-7xl md:text-8xl font-bold mb-2 tracking-tighter">
+                <span class="neon-text-green">LAVA</span>
+                <span class="neon-text-pink">&amp;</span>
+                <span class="neon-text-cyan">LEVE</span>
+            </h1>
+            <p class="text-3xl text-[#d8b4ff] mb-8">LAVANDERIA EXPRESS • NATAL/RN</p>
+            
+            <div class="flex flex-col md:flex-row gap-6 justify-center items-center">
+                <a href="#app" 
+                   class="px-14 py-6 text-2xl font-bold bg-black border-4 border-[#39ff14] rounded-3xl hover:bg-[#39ff14] hover:text-black transition-all flex items-center gap-4">
+                    <i class="fa-solid fa-gamepad"></i>
+                    JOGUE NO APP
+                </a>
+                
+                <a href="#maquinas" 
+                   class="px-14 py-6 text-2xl font-bold bg-black border-4 border-[#ff00cc] rounded-3xl hover:bg-[#ff00cc] hover:text-black transition-all">
+                    VER AS 6 MÁQUINAS
+                </a>
+            </div>
+            
+            <div class="mt-16 text-[#00ffff] text-xl flex items-center justify-center gap-8">
+                <div class="flex items-center gap-2">
+                    <i class="fa-solid fa-bolt"></i>
+                    <span>6 MÁQUINAS TOTALMENTE AUTOMATIZADAS</span>
+                </div>
+                <div class="w-2 h-2 bg-[#ff00cc] rounded-full animate-pulse"></div>
+                <div>APP PRÓPRIO • PAGUE E ATIVE NA HORA</div>
+            </div>
+        </div>
+
+        <div class="absolute bottom-10 left-1/2 transform -translate-x-1/2 flex flex-col items-center">
+            <div class="text-xs tracking-widest mb-2">ROLE PARA BAIXO</div>
+            <i class="fa-solid fa-chevron-down text-4xl animate-bounce"></i>
+        </div>
+    </section>
+
+    <!-- MÁQUINAS -->
+    <section id="maquinas" class="py-24 bg-black/70">
+        <div class="max-w-7xl mx-auto px-6">
+            <h2 class="text-center text-5xl mb-4 neon-text-green">6 MÁQUINAS LEVEL UP</h2>
+            <p class="text-center text-[#d8b4ff] text-2xl mb-16">Totalmente automatizadas • Cestos fofos inclusos • Controle total pelo app</p>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Máquina 1 -->
+                <div class="machine-card lego-block p-8 rounded-3xl text-center">
+                    <div class="bg-gradient-to-br from-[#39ff14] to-[#00ffff] w-20 h-20 mx-auto rounded-2xl flex items-center justify-center mb-6 text-4xl">🧺</div>
+                    <h3 class="text-xl font-bold mb-2">LEVEL 1 • LAVA RÁPIDA</h3>
+                    <p class="text-[#ff00cc]">20kg • 35 min</p>
+                    <div class="mt-6 inline-block bg-green-500 text-black text-xs px-6 py-2 rounded-full font-bold">DISPONÍVEL AGORA</div>
+                    <button onclick="ativarMaquina(1)" 
+                            class="mt-6 w-full py-4 bg-[#ff00cc] text-black font-bold rounded-2xl hover:bg-white transition">
+                        ATIVAR NO APP →
+                    </button>
+                </div>
+                
+                <!-- Máquina 2 -->
+                <div class="machine-card lego-block p-8 rounded-3xl text-center">
+                    <div class="bg-gradient-to-br from-[#ff00cc] to-[#00ffff] w-20 h-20 mx-auto rounded-2xl flex items-center justify-center mb-6 text-4xl">🧺</div>
+                    <h3 class="text-xl font-bold mb-2">LEVEL 2 • SECA RÁPIDA</h3>
+                    <p class="text-[#39ff14]">15kg • 25 min</p>
+                    <div class="mt-6 inline-block bg-green-500 text-black text-xs px-6 py-2 rounded-full font-bold">DISPONÍVEL AGORA</div>
+                    <button onclick="ativarMaquina(2)" 
+                            class="mt-6 w-full py-4 bg-[#ff00cc] text-black font-bold rounded-2xl hover:bg-white transition">
+                        ATIVAR NO APP →
+                    </button>
+                </div>
+                
+                <!-- Máquina 3 -->
+                <div class="machine-card lego-block p-8 rounded-3xl text-center">
+                    <div class="bg-gradient-to-br from-[#00ffff] to-[#39ff14] w-20 h-20 mx-auto rounded-2xl flex items-center justify-center mb-6 text-4xl">🧺</div>
+                    <h3 class="text-xl font-bold mb-2">LEVEL 3 • LAVA + SECA</h3>
+                    <p class="text-[#d8b4ff]">25kg • 55 min</p>
+                    <div class="mt-6 inline-block bg-green-500 text-black text-xs px-6 py-2 rounded-full font-bold">DISPONÍVEL AGORA</div>
+                    <button onclick="ativarMaquina(3)" 
+                            class="mt-6 w-full py-4 bg-[#ff00cc] text-black font-bold rounded-2xl hover:bg-white transition">
+                        ATIVAR NO APP →
+                    </button>
+                </div>
+                
+                <!-- Máquina 4 -->
+                <div class="machine-card lego-block p-8 rounded-3xl text-center">
+                    <div class="bg-gradient-to-br from-[#39ff14] to-[#ff00cc] w-20 h-20 mx-auto rounded-2xl flex items-center justify-center mb-6 text-4xl">🧺</div>
+                    <h3 class="text-xl font-bold mb-2">LEVEL 4 • DELICADA</h3>
+                    <p class="text-[#00ffff]">10kg • 40 min</p>
+                    <div class="mt-6 inline-block bg-green-500 text-black text-xs px-6 py-2 rounded-full font-bold">DISPONÍVEL AGORA</div>
+                    <button onclick="ativarMaquina(4)" 
+                            class="mt-6 w-full py-4 bg-[#ff00cc] text-black font-bold rounded-2xl hover:bg-white transition">
+                        ATIVAR NO APP →
+                    </button>
+                </div>
+                
+                <!-- Máquina 5 -->
+                <div class="machine-card lego-block p-8 rounded-3xl text-center">
+                    <div class="bg-gradient-to-br from-[#00ffff] to-[#ff00cc] w-20 h-20 mx-auto rounded-2xl flex items-center justify-center mb-6 text-4xl">🧺</div>
+                    <h3 class="text-xl font-bold mb-2">LEVEL 5 • TURBO</h3>
+                    <p class="text-[#39ff14]">30kg • 28 min</p>
+                    <div class="mt-6 inline-block bg-green-500 text-black text-xs px-6 py-2 rounded-full font-bold">DISPONÍVEL AGORA</div>
+                    <button onclick="ativarMaquina(5)" 
+                            class="mt-6 w-full py-4 bg-[#ff00cc] text-black font-bold rounded-2xl hover:bg-white transition">
+                        ATIVAR NO APP →
+                    </button>
+                </div>
+                
+                <!-- Máquina 6 -->
+                <div class="machine-card lego-block p-8 rounded-3xl text-center">
+                    <div class="bg-gradient-to-br from-[#ff00cc] to-[#39ff14] w-20 h-20 mx-auto rounded-2xl flex items-center justify-center mb-6 text-4xl">🧺</div>
+                    <h3 class="text-xl font-bold mb-2">LEVEL 6 • LEGEND</h3>
+                    <p class="text-[#00ffff]">20kg • 45 min</p>
+                    <div class="mt-6 inline-block bg-green-500 text-black text-xs px-6 py-2 rounded-full font-bold">DISPONÍVEL AGORA</div>
+                    <button onclick="ativarMaquina(6)" 
+                            class="mt-6 w-full py-4 bg-[#ff00cc] text-black font-bold rounded-2xl hover:bg-white transition">
+                        ATIVAR NO APP →
+                    </button>
+                </div>
+            </div>
+            
+            <p class="text-center mt-12 text-[#d8b4ff] text-sm">Todas as máquinas são controladas 100% pelo app • Cestos personalizados com o nosso mascote inclusos</p>
+        </div>
+    </section>
+
+    <!-- O APP -->
+    <section id="app" class="py-24 bg-[#1a1428]">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid md:grid-cols-2 gap-16 items-center">
+                <div>
+                    <h2 class="text-6xl neon-text-cyan mb-6">SEU APP PRÓPRIO</h2>
+                    <p class="text-2xl text-[#d8b4ff] mb-10">Pague com PIX • Escolha a máquina • Ative na hora • Tudo em 30 segundos</p>
+                    
+                    <div class="space-y-8">
+                        <div class="flex gap-6">
+                            <div class="w-14 h-14 bg-[#ff00cc] rounded-2xl flex items-center justify-center text-3xl flex-shrink-0">💳</div>
+                            <div>
+                                <h4 class="text-xl font-bold">Pagamento instantâneo</h4>
+                                <p class="text-[#b4a8ff]">PIX, cartão ou saldo do app</p>
+                            </div>
+                        </div>
+                        <div class="flex gap-6">
+                            <div class="w-14 h-14 bg-[#39ff14] rounded-2xl flex items-center justify-center text-3xl flex-shrink-0">📍</div>
+                            <div>
+                                <h4 class="text-xl font-bold">Escolha sua máquina</h4>
+                                <p class="text-[#b4a8ff]">Veja em tempo real quais estão livres</p>
+                            </div>
+                        </div>
+                        <div class="flex gap-6">
+                            <div class="w-14 h-14 bg-[#00ffff] rounded-2xl flex items-center justify-center text-3xl flex-shrink-0">🚀</div>
+                            <div>
+                                <h4 class="text-xl font-bold">Ativação remota</h4>
+                                <p class="text-[#b4a8ff]">Confirme o recebimento e a máquina liga sozinha</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <a href="#" class="mt-12 inline-flex items-center gap-3 px-10 py-5 bg-gradient-to-r from-[#39ff14] to-[#ff00cc] text-black text-2xl font-bold rounded-3xl">
+                        BAIXAR AGORA NO APPLE / ANDROID
+                    </a>
+                </div>
+                
+                <!-- Mockup do App -->
+                <div class="phone-mock mx-auto w-[320px] h-[620px] p-4 relative">
+                    <div class="bg-[#0a071f] w-full h-full rounded-[40px] overflow-hidden relative">
+                        <!-- Tela do app -->
+                        <div class="p-6 h-full flex flex-col">
+                            <div class="text-center text-[#39ff14] text-xs mb-8">LAVA &amp; LEVE APP v1.0</div>
+                            
+                            <div onclick="fakeAppClick()" class="cursor-pointer bg-gradient-to-br from-[#ff00cc]/80 to-[#00ffff]/80 text-black p-8 rounded-3xl mb-6 text-center font-bold">
+                                ESCOLHER MÁQUINA<br>
+                                <span class="text-4xl">🧺</span>
+                            </div>
+                            
+                            <div class="flex-1 flex flex-col gap-4">
+                                <div class="bg-white/10 p-4 rounded-2xl text-sm flex justify-between items-center">
+                                    <span>Máquina Level 3</span>
+                                    <span class="text-[#39ff14]">R$ 18,90</span>
+                                </div>
+                                <div onclick="fakeAppClick()" class="cursor-pointer bg-[#39ff14] text-black py-6 text-center font-bold rounded-3xl text-xl">
+                                    PAGAR COM PIX E ATIVAR
+                                </div>
+                            </div>
+                            
+                            <div class="text-center text-[10px] text-[#d8b4ff] mt-auto">Confirmação automática • Cashback instantâneo</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- LAVA LEAGUE - CASHBACK -->
+    <section id="fidelidade" class="py-24 bg-black">
+        <div class="max-w-7xl mx-auto px-6">
+            <h2 class="text-center text-6xl mb-4 neon-text-pink">LAVA LEAGUE</h2>
+            <p class="text-center text-3xl text-[#39ff14] mb-16">O sistema de cashback mais gamer do Brasil!</p>
+            
+            <div class="grid md:grid-cols-3 gap-10 max-w-5xl mx-auto">
+                <div class="text-center lego-block p-10 rounded-3xl">
+                    <div class="text-6xl mb-4">🥉</div>
+                    <h3 class="text-2xl font-bold mb-3">ROOKIE</h3>
+                    <p class="text-[#d8b4ff]">1ª lavagem = 50 pontos</p>
+                    <div class="mt-8 text-4xl font-bold text-[#39ff14]">R$ 5 OFF</div>
+                </div>
+                <div class="text-center lego-block p-10 rounded-3xl scale-110 border-8 border-[#ff00cc]">
+                    <div class="text-6xl mb-4">🥈</div>
+                    <h3 class="text-2xl font-bold mb-3">PRO</h3>
+                    <p class="text-[#d8b4ff]">A cada R$ 10 = 10 pontos</p>
+                    <div class="mt-8 text-4xl font-bold text-[#ff00cc]">R$ 15 OFF</div>
+                    <div class="text-xs mt-4 bg-black px-6 py-2 inline-block rounded-full">MAIS POPULAR</div>
+                </div>
+                <div class="text-center lego-block p-10 rounded-3xl">
+                    <div class="text-6xl mb-4">🏆</div>
+                    <h3 class="text-2xl font-bold mb-3">LEGEND</h3>
+                    <p class="text-[#d8b4ff]">150+ pontos = 1 lavagem GRÁTIS</p>
+                    <div class="mt-8 text-4xl font-bold text-[#00ffff]">CASHBACK 20%</div>
+                </div>
+            </div>
+            
+            <div class="text-center mt-16 text-xl text-[#b4a8ff]">
+                Quanto mais você lava, mais você ganha! <span class="neon-text-green">Cashback automático no app</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- COMO CONQUISTAR CLIENTES + FEEDBACK -->
+    <section id="feedback" class="py-24 bg-[#1a1428]">
+        <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-20">
+            <!-- Conquistar clientes -->
+            <div>
+                <h2 class="text-5xl neon-text-green mb-10">COMO CONQUISTAR CLIENTES</h2>
+                <ul class="space-y-8 text-xl">
+                    <li class="flex gap-6">
+                        <span class="text-4xl">🎁</span>
+                        <div>
+                            <strong>Indique &amp; Ganhe</strong><br>
+                            R$ 20 de crédito para quem indica + R$ 20 para o amigo
+                        </div>
+                    </li>
+                    <li class="flex gap-6">
+                        <span class="text-4xl">📱</span>
+                        <div>
+                            <strong>Instagram &amp; TikTok</strong><br>
+                            Conteúdo ASMR de roupas limpinhas + desafio "Speed Wash"
+                        </div>
+                    </li>
+                    <li class="flex gap-6">
+                        <span class="text-4xl">📍</span>
+                        <div>
+                            <strong>Parcerias locais em Natal</strong><br>
+                            Condomínios, academias femininas e salões de beleza
+                        </div>
+                    </li>
+                    <li class="flex gap-6">
+                        <span class="text-4xl">⭐</span>
+                        <div>
+                            <strong>Primeira lavagem com 50% OFF</strong><br>
+                            + 100 pontos Lava League de boas-vindas
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            
+            <!-- Formulário de feedback -->
+            <div class="lego-block p-10 rounded-3xl bg-black">
+                <h2 class="text-4xl mb-8 neon-text-cyan">DEIXE SEU FEEDBACK</h2>
+                <form onsubmit="enviarFeedback(event)" class="space-y-6">
+                    <input type="text" placeholder="Seu nome" 
+                           class="w-full bg-white/10 border border-[#00ffff] rounded-2xl px-6 py-5 text-white placeholder:text-[#b4a8ff]">
+                    <textarea placeholder="Como foi sua experiência?" rows="4"
+                              class="w-full bg-white/10 border border-[#00ffff] rounded-2xl px-6 py-5 text-white placeholder:text-[#b4a8ff]"></textarea>
+                    
+                    <div class="flex gap-4">
+                        <button type="submit"
+                                class="flex-1 py-5 bg-gradient-to-r from-[#39ff14] to-[#00ffff] text-black font-bold rounded-3xl">
+                            ENVIAR FEEDBACK + 10 PONTOS
+                        </button>
+                    </div>
+                </form>
+                <p class="text-center text-xs text-[#d8b4ff] mt-8">Todo feedback gera pontos de cashback no app!</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="bg-black py-16 border-t-4 border-[#ff00cc]">
+        <div class="max-w-7xl mx-auto px-6 text-center">
+            <img src="logo.png" alt="Lava & Leve" class="mx-auto h-20 mb-6">
+            <p class="text-2xl mb-8">Lava &amp; Leve Express • Natal, Rio Grande do Norte</p>
+            
+            <div class="flex justify-center gap-8 text-3xl mb-12">
+                <i class="fa-brands fa-instagram hover:scale-125 cursor-pointer transition"></i>
+                <i class="fa-brands fa-tiktok hover:scale-125 cursor-pointer transition"></i>
+                <i class="fa-brands fa-whatsapp hover:scale-125 cursor-pointer transition"></i>
+            </div>
+            
+            <p class="text-xs text-[#666]">© 2026 Lava &amp; Leve • Feito com ❤️ e neon para as garotas gamer de Natal</p>
+        </div>
+    </footer>
+
+    <script>
+        function ativarMaquina(n) {
+            alert(`🎮 MÁQUINA LEVEL ${n} ATIVADA COM SUCESSO!\n\nPagamento confirmado • Início em 3... 2... 1... 🚀`);
+        }
+        
+        function fakeAppClick() {
+            alert("📱 App simulado!\n\nNa versão real o cliente paga e ativa a máquina na hora.");
+        }
+        
+        function enviarFeedback(e) {
+            e.preventDefault();
+            alert("✅ FEEDBACK ENVIADO!\n\nVocê ganhou +10 pontos Lava League!\nObrigada por lavar com a gente 💖");
+        }
+        
+        // Tailwind script já carregado
+        console.log('%cLava & Leve • Site pronto! 🚀', 'color:#39ff14; font-size:20px; font-family:monospace');
+    </script>
+</body>
+</html>
