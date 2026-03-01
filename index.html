@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lava & Leve • Lavanderia Express</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&amp;family=Inter:wght@300;400;500;600&amp;display=swap');
+        
+        body {
+            font-family: 'Inter', system-ui;
+        }
+        .heading {
+            font-family: 'Playfair Display', serif;
+        }
+        
+        .hero-bg {
+            background: linear-gradient(135deg, #1a0f23 0%, #2a1b38 100%);
+        }
+        
+        .soft-glow {
+            text-shadow: 0 0 30px rgba(236, 172, 255, 0.45);
+        }
+        
+        .card {
+            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .card:hover {
+            transform: translateY(-12px);
+            box-shadow: 0 30px 60px -15px rgba(192, 132, 252, 0.35);
+        }
+        
+        .button-chic {
+            transition: all 0.4s ease;
+        }
+        .button-chic:hover {
+            transform: scale(1.04);
+            letter-spacing: 0.5px;
+        }
+        
+        .phone {
+            border: 14px solid #1f162f;
+            border-radius: 58px;
+            box-shadow: 0 0 60px rgba(236, 172, 255, 0.3);
+        }
+    </style>
+</head>
+<body class="bg-[#0f081f] text-[#f3e8ff] overflow-x-hidden">
+
+    <!-- HEADER -->
+    <header class="sticky top-0 z-50 bg-[#0f081f]/95 backdrop-blur-xl border-b border-[#c084fc]/20">
+        <div class="max-w-7xl mx-auto px-8 py-7 flex justify-between items-center">
+            <div class="flex items-center gap-4">
+                <img src="logo.png" alt="Lava & Leve" class="h-14 w-auto">
+                <div class="text-3xl heading tracking-tighter">
+                    <span class="text-[#e8b4ff]">Lava</span><span class="text-white">&amp;</span><span class="text-[#c084fc]">Leve</span>
+                </div>
+            </div>
+            
+            <nav class="hidden md:flex items-center gap-10 text-sm font-medium tracking-widest">
+                <a href="#maquinas" class="hover:text-[#e8b4ff] transition">Máquinas</a>
+                <a href="#app" class="hover:text-[#e8b4ff] transition">App</a>
+                <a href="#fidelidade" class="hover:text-[#e8b4ff] transition">Fidelidade</a>
+                <a href="#feedback" class="hover:text-[#e8b4ff] transition">Feedback</a>
+            </nav>
+            
+            <a href="#app" 
+               class="button-chic px-9 py-4 bg-white text-[#1a0f23] font-semibold rounded-3xl text-sm tracking-wider shadow-xl">
+                BAIXAR APP
+            </a>
+        </div>
+    </header>
+
+    <!-- HERO -->
+    <section class="hero-bg min-h-screen flex items-center relative">
+        <div class="max-w-5xl mx-auto px-8 text-center">
+            <img src="logo.png" alt="Lava & Leve" class="mx-auto mb-12 w-96 opacity-95">
+            
+            <h1 class="heading text-6xl md:text-7xl font-light tracking-tighter soft-glow leading-none mb-6">
+                Elegância<br>em cada lavagem
+            </h1>
+            <p class="text-2xl text-[#d1c4e9] max-w-lg mx-auto">
+                Lavanderia express premium com 6 máquinas automatizadas, app próprio e experiência sofisticada para mulheres que valorizam praticidade e refinamento.
+            </p>
+            
+            <div class="mt-16 flex flex-col md:flex-row gap-6 justify-center items-center">
+                <a href="#maquinas" 
+                   class="button-chic px-14 py-6 border border-[#c084fc] hover:bg-[#c084fc] hover:text-white text-lg rounded-3xl">
+                    Conheça as máquinas
+                </a>
+                <a href="#app" 
+                   class="button-chic px-14 py-6 bg-gradient-to-r from-[#c084fc] to-[#e8b4ff] text-black text-lg font-semibold rounded-3xl">
+                    Acessar o App
+                </a>
+            </div>
+            
+            <p class="mt-24 text-xs tracking-[3px] text-[#b4a1d8]">FORTALEZA • CEARÁ</p>
+        </div>
+        
+        <div class="absolute bottom-12 left-1/2 -translate-x-1/2 text-[#c084fc]/60 text-xs tracking-widest flex flex-col items-center">
+            <div>ROLE PARA CONHECER</div>
+            <i class="fa-solid fa-chevron-down mt-3 animate-bounce"></i>
+        </div>
+    </section>
+
+    <!-- MÁQUINAS -->
+    <section id="maquinas" class="py-28 bg-white text-[#1a0f23]">
+        <div class="max-w-7xl mx-auto px-8">
+            <div class="text-center mb-16">
+                <h2 class="heading text-5xl tracking-tight">Nossas 6 Máquinas Premium</h2>
+                <p class="text-[#9f6bc4] text-xl mt-3">Totalmente automatizadas • Cestos exclusivos • Ativação pelo app</p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Máquina 1 -->
+                <div class="card bg-white border border-[#f3e8ff] rounded-3xl p-10 text-center">
+                    <div class="mx-auto w-20 h-20 bg-gradient-to-br from-[#c084fc] to-[#e8b4ff] rounded-3xl flex items-center justify-center text-5xl mb-8">🧺</div>
+                    <h3 class="heading text-3xl mb-2">Express</h3>
+                    <p class="text-[#9f6bc4]">20 kg • 35 minutos</p>
+                    <p class="text-sm mt-6 text-gray-600">Lava e seca com rapidez e delicadeza.</p>
+                </div>
+                
+                <!-- Máquina 2 -->
+                <div class="card bg-white border border-[#f3e8ff] rounded-3xl p-10 text-center">
+                    <div class="mx-auto w-20 h-20 bg-gradient-to-br from-[#e8b4ff] to-[#c084fc] rounded-3xl flex items-center justify-center text-5xl mb-8">🧺</div>
+                    <h3 class="heading text-3xl mb-2">Secagem Premium</h3>
+                    <p class="text-[#9f6bc4]">15 kg • 25 minutos</p>
+                    <p class="text-sm mt-6 text-gray-600">Secagem suave e eficiente.</p>
+                </div>
+                
+                <!-- Máquina 3 -->
+                <div class="card bg-white border border-[#f3e8ff] rounded-3xl p-10 text-center">
+                    <div class="mx-auto w-20 h-20 bg-gradient-to-br from-[#c084fc] to-[#e8b4ff] rounded-3xl flex items-center justify-center text-5xl mb-8">🧺</div>
+                    <h3 class="heading text-3xl mb-2">Completa</h3>
+                    <p class="text-[#9f6bc4]">25 kg • 55 minutos</p>
+                    <p class="text-sm mt-6 text-gray-600">Lava + seca em um único ciclo.</p>
+                </div>
+                
+                <!-- Máquina 4 -->
+                <div class="card bg-white border border-[#f3e8ff] rounded-3xl p-10 text-center">
+                    <div class="mx-auto w-20 h-20 bg-gradient-to-br from-[#e8b4ff] to-[#c084fc] rounded-3xl flex items-center justify-center text-5xl mb-8">🧺</div>
+                    <h3 class="heading text-3xl mb-2">Delicada</h3>
+                    <p class="text-[#9f6bc4]">10 kg • 40 minutos</p>
+                    <p class="text-sm mt-6 text-gray-600">Para peças finas e íntimas.</p>
+                </div>
+                
+                <!-- Máquina 5 -->
+                <div class="card bg-white border border-[#f3e8ff] rounded-3xl p-10 text-center">
+                    <div class="mx-auto w-20 h-20 bg-gradient-to-br from-[#c084fc] to-[#e8b4ff] rounded-3xl flex items-center justify-center text-5xl mb-8">🧺</div>
+                    <h3 class="heading text-3xl mb-2">Turbo</h3>
+                    <p class="text-[#9f6bc4]">30 kg • 28 minutos</p>
+                    <p class="text-sm mt-6 text-gray-600">Para cargas maiores com velocidade.</p>
+                </div>
+                
+                <!-- Máquina 6 -->
+                <div class="card bg-white border border-[#f3e8ff] rounded-3xl p-10 text-center">
+                    <div class="mx-auto w-20 h-20 bg-gradient-to-br from-[#e8b4ff] to-[#c084fc] rounded-3xl flex items-center justify-center text-5xl mb-8">🧺</div>
+                    <h3 class="heading text-3xl mb-2">Signature</h3>
+                    <p class="text-[#9f6bc4]">20 kg • 45 minutos</p>
+                    <p class="text-sm mt-6 text-gray-600">Ciclo premium com fragrância exclusiva.</p>
+                </div>
+            </div>
+            
+            <p class="text-center text-[#9f6bc4] mt-12 text-sm">Todas as máquinas são ativadas diretamente pelo app após confirmação de pagamento e recebimento.</p>
+        </div>
+    </section>
+
+    <!-- APP -->
+    <section id="app" class="py-28 bg-[#1a0f23]">
+        <div class="max-w-6xl mx-auto px-8 grid md:grid-cols-2 gap-16 items-center">
+            <div>
+                <h2 class="heading text-6xl tracking-tighter leading-none mb-8">Seu App Particular</h2>
+                <p class="text-[#d1c4e9] text-xl mb-12">Pague com PIX ou cartão, escolha a máquina disponível e ative tudo em segundos. Simples, seguro e sofisticado.</p>
+                
+                <div class="space-y-10">
+                    <div class="flex gap-7">
+                        <div class="text-5xl text-[#c084fc]">💳</div>
+                        <div>
+                            <h4 class="text-xl font-semibold">Pagamento Instantâneo</h4>
+                            <p class="text-[#b4a1d8]">PIX, cartão ou saldo do app</p>
+                        </div>
+                    </div>
+                    <div class="flex gap-7">
+                        <div class="text-5xl text-[#c084fc]">📍</div>
+                        <div>
+                            <h4 class="text-xl font-semibold">Escolha e Ative</h4>
+                            <p class="text-[#b4a1d8]">Visualize em tempo real e ligue a máquina remotamente</p>
+                        </div>
+                    </div>
+                    <div class="flex gap-7">
+                        <div class="text-5xl text-[#c084fc]">🛎️</div>
+                        <div>
+                            <h4 class="text-xl font-semibold">Confirmação Automática</h4>
+                            <p class="text-[#b4a1d8]">Recebimento confirmado = máquina em funcionamento imediato</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <a href="#" class="button-chic mt-12 inline-block px-10 py-5 bg-white text-black font-semibold rounded-3xl">
+                    Baixar para iOS e Android
+                </a>
+            </div>
+            
+            <!-- Mockup App -->
+            <div class="phone w-[320px] h-[640px] mx-auto bg-[#0f081f] p-3 rounded-[58px] relative">
+                <div class="bg-[#1a0f23] w-full h-full rounded-[44px] overflow-hidden p-6 flex flex-col">
+                    <div class="text-center text-[#c084fc] text-xs tracking-widest mb-8">LAVA &amp; LEVE</div>
+                    <div class="bg-gradient-to-br from-[#c084fc]/90 to-[#e8b4ff]/90 text-black text-center py-10 rounded-3xl font-medium text-xl flex-1 flex items-center justify-center">
+                        Escolher máquina<br>ou pagar agora
+                    </div>
+                    <div class="mt-auto text-center text-[10px] text-[#b4a1d8]">Pagamento confirmado • Ativação instantânea</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FIDELIDADE -->
+    <section id="fidelidade" class="py-28 bg-white text-[#1a0f23]">
+        <div class="max-w-5xl mx-auto px-8 text-center">
+            <h2 class="heading text-5xl mb-4">Programa de Fidelidade</h2>
+            <p class="text-[#9f6bc4] text-xl max-w-md mx-auto">Quanto mais você lava, mais benefícios exclusivos recebe — incluindo cashback automático.</p>
+            
+            <div class="grid md:grid-cols-3 gap-10 mt-16">
+                <div class="card border border-[#f3e8ff] rounded-3xl p-10">
+                    <div class="text-[#c084fc] text-4xl mb-4">Essencial</div>
+                    <p class="font-medium">5% de cashback em toda lavagem + prioridade em horários de pico</p>
+                </div>
+                <div class="card border border-[#c084fc] rounded-3xl p-10 scale-105 shadow-xl">
+                    <div class="text-[#e8b4ff] text-4xl mb-4">Signature</div>
+                    <p class="font-medium">12% de cashback + lavagem grátis a cada 8 usos + fragrância exclusiva</p>
+                </div>
+                <div class="card border border-[#f3e8ff] rounded-3xl p-10">
+                    <div class="text-[#c084fc] text-4xl mb-4">Royale</div>
+                    <p class="font-medium">20% de cashback + delivery grátis + acesso antecipado a novos serviços</p>
+                </div>
+            </div>
+            
+            <p class="mt-12 text-sm text-[#9f6bc4]">Cashback creditado automaticamente no app após cada uso.</p>
+        </div>
+    </section>
+
+    <!-- CONQUISTA E FEEDBACK -->
+    <section id="feedback" class="py-28 bg-[#1a0f23]">
+        <div class="max-w-7xl mx-auto px-8 grid md:grid-cols-2 gap-20">
+            <!-- Conquista clientes -->
+            <div>
+                <h2 class="heading text-5xl mb-10">Como conquistamos você</h2>
+                <ul class="space-y-10 text-lg">
+                    <li class="flex gap-6">
+                        <span class="text-4xl text-[#c084fc]">🎁</span>
+                        <div>
+                            <strong>Indique &amp; Ganhe</strong><br>
+                            <span class="text-[#b4a1d8]">R$ 25 de crédito para você e para sua amiga</span>
+                        </div>
+                    </li>
+                    <li class="flex gap-6">
+                        <span class="text-4xl text-[#c084fc]">📸</span>
+                        <div>
+                            <strong>Conteúdo elegante no Instagram</strong><br>
+                            <span class="text-[#b4a1d8]">Dicas de cuidados com roupas + looks do dia a dia</span>
+                        </div>
+                    </li>
+                    <li class="flex gap-6">
+                        <span class="text-4xl text-[#c084fc]">💖</span>
+                        <div>
+                            <strong>Primeira lavagem com 40% OFF</strong><br>
+                            <span class="text-[#b4a1d8]">+ cashback extra de boas-vindas</span>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            
+            <!-- Feedback -->
+            <div class="bg-[#0f081f] border border-[#c084fc]/30 rounded-3xl p-10">
+                <h2 class="heading text-4xl mb-8">Deixe sua opinião</h2>
+                <form onsubmit="enviarFeedback(event)" class="space-y-7">
+                    <input type="text" placeholder="Seu nome" class="w-full bg-transparent border border-[#c084fc]/40 rounded-2xl px-7 py-5 focus:outline-none focus:border-[#e8b4ff]">
+                    <textarea placeholder="Como foi sua experiência?" rows="5" class="w-full bg-transparent border border-[#c084fc]/40 rounded-2xl px-7 py-5 focus:outline-none focus:border-[#e8b4ff]"></textarea>
+                    <button type="submit" 
+                            class="button-chic w-full py-6 bg-gradient-to-r from-[#c084fc] to-[#e8b4ff] text-black font-semibold rounded-3xl">
+                        ENVIAR FEEDBACK
+                    </button>
+                </form>
+                <p class="text-xs text-center text-[#b4a1d8] mt-6">Todo feedback gera cashback extra no app</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="bg-black py-20 text-center border-t border-[#c084fc]/20">
+        <img src="logo.png" alt="Lava & Leve" class="mx-auto h-16 mb-6 opacity-90">
+        <p class="text-xl heading">Lava &amp; Leve Express • Fortaleza, Ceará</p>
+        <p class="mt-6 text-sm text-[#9f6bc4]">Idealizado por Antonella Simião</p>
+        <p class="text-xs mt-12 text-[#6b5a8e]">© 2026 • Todos os direitos reservados</p>
+    </footer>
+
+    <script>
+        function enviarFeedback(e) {
+            e.preventDefault();
+            alert("Obrigada pelo feedback! 💖\n\nVocê ganhou R$ 5 de cashback no app.");
+        }
+        
+        console.log('%cLava & Leve • Site chique pronto 💕', 'color:#e8b4ff; font-size:14px');
+    </script>
+</body>
+</html>
